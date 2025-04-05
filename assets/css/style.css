@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(185, 144, 9);
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #c9c507;
+}
+
+footer {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.logo {
+  width: 250px;
+}
+
+.form-select {
+  width: 100px;
+  padding: 10px 10px;
+  margin: 5px 0;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(168, 168, 172, 0.679);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f3ca456b;
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  padding: 20px;
+  background-color: #c9c507;
+  box-sizing: border-box;
+  transition: grid-template-columns 0.5s ease;
+}
+
+.grid-item {
+  background-color: #1d3557;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(27, 163, 105, 0.21);
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: solid 1px #1d3557;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 40px rgba(27, 163, 105, 0.3);
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #1d3557;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.card-title:hover {
+  color: #420f0f;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #0c1125ab;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1d3557;
+  text-align: end;
+}
+
+.card-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #1d3557;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Animación para cargar las cards */
+.grid-item {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de la barra de navegación */
+.navbar-toggler {
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler.collapsed {
+  transform: rotate(0deg);
+}
+
+.navbar-toggler:not(.collapsed) {
+  transform: rotate(180deg);
+}
+
+/* Navbar */
+.navbar {
+  padding: 5px 10px; /* Menos espacio dentro del navbar */
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  padding: 5px 10px; /* Reducir padding de los enlaces */
+}
+
+/* Logo */
+.logo {
+  width: 150px; /* Reducir el tamaño del logo */
+}
+
+/* Ajustar el tamaño de los íconos en el navbar */
+.navbar .nav-link i {
+  font-size: 1.2rem; /* Ajustar tamaño del ícono del carrito */
+}
+
+/* Animación para los botones */
+.card-button {
+  opacity: 0;
+  animation: fadeInButton 1s ease-out forwards;
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reducir el tamaño de los inputs */
+.small-input {
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  padding: 8px; /* Reducir el padding para que el campo sea más pequeño */
+  width: 80%; /* Reducir el ancho de los inputs */
+  margin: 5px auto; /* Centramos los inputs y les damos espacio alrededor */
+}
+
+/* Botón más pequeño */
+.btn-sm {
+  padding: 8px 20px; /* Ajustar el tamaño del padding */
+  font-size: 14px; /* Reducir el tamaño de la fuente */
+}
+
+/* Personalizar el contenedor de la sección */
+.mb-1 {
+  max-width: 500px; /* Limitar el tamaño máximo de la sección */
+  margin: 20px auto; /* Centrar la sección */
+  text-align: center;
+}
+
